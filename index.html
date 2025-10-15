@@ -122,6 +122,17 @@
       cursor: pointer;
     }
 
+    #downloadBtn{
+     background-color: green;
+    }
+
+    #credit{
+      color: black;
+      margin-right: 10px;
+      font-size: 20px;
+      float: right
+    }
+
     .no-capture {
       display: block;
     }
@@ -152,19 +163,19 @@
 
     <div class="gallery">
       <div class="gallery-item">
-        <img src="img/mayabhai.jfif" alt="માયાલાલ આહીર">
+        <img src="img/mayabhai.jfif" alt="માયાભાઇ આહીર">
         <p>માયાભાઇ આહીર</p>
       </div>
       <div class="gallery-item">
-        <img src="img/Kirtidan_Gadhvi.jpg" alt="નિરલકાંત ગઢવી">
+        <img src="img/Kirtidan_Gadhvi.jpg" alt="કિર્તીદાન ગઢવી">
         <p>કિર્તીદાન ગઢવી</p>
       </div>
       <div class="gallery-item">
-        <img src="IMG/Farida_Meer.jpg" alt="ફાલ્ગુની મીરા">
+        <img src="img/Farida_Meer.jpg" alt="ફરીદાબેન મીર">
         <p>ફરીદાબેન મીર</p>
       </div>
       <div class="gallery-item">
-        <img src="IMG/Vishal_Varu.jpg" alt="વિશાલભાઈ વરુ">
+        <img src="img/Vishal_Varu.jpg" alt="વિશાલભાઈ વરુ">
         <p>વિશાલભાઈ વરુ</p>
       </div>
     </div>
@@ -172,10 +183,10 @@
 
   <div class="no-capture">
     <input type="text" id="userName" placeholder="તમારું નામ લખો" />
-    <input type="file" id="imageUpload" accept="image/*" />
-    <button id="downloadBtn">Download Story (1080x1920)</button>
+    <input type="file" id="imageUpload" accept="image/*" placeholder="ફોટો પસંદ કરો"/>
+    <button id="downloadBtn">Download Story</button>
   </div>
-
+  <p id="credit">Designed By: Hardik Sapariya</p>
   <script>
     const imageUpload = document.getElementById("imageUpload");
     const preview = document.getElementById("preview");
