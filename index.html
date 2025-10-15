@@ -3,52 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>લીલ ડાયરો - સાંસ્કૃતિક કાર્યક્રમ</title>
+  <title>લોક ડાયરો - સાંસ્કૃતિક કાર્યક્રમ</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <style>
     body {
       font-family: "Noto Sans Gujarati", sans-serif;
-      background: linear-gradient(180deg, #8b0000, #b71c1c);
+      background: linear-gradient(180deg, #600000, #b71c1c);
       color: #fff;
       text-align: center;
       margin: 0;
       padding: 20px;
     }
 
-    .main-card {
-      background: #fff;
-      color: #000;
-      border-radius: 20px;
-      max-width: 600px;
+    /* Container fixed to story aspect ratio */
+    .story-wrapper {
+      width: 360px;
+      height: 640px; /* same 9:16 aspect ratio */
+      max-width: 100%;
       margin: auto;
-      padding: 10px;
+      transform-origin: top left;
+      background: linear-gradient(180deg, #fff8e1, #ffecb3);
+      border: 4px solid #b71c1c;
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     }
 
     .header {
-      background: linear-gradient(90deg, #8b0000, #c62828);
+      background: linear-gradient(90deg, #7b0000, #c62828);
       color: #fff;
-      padding: 12px;
+      padding: 14px;
       border-radius: 15px 15px 0 0;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 16px;
       line-height: 1.6;
     }
 
     .sub-header {
       color: #ffeb3b;
-      font-size: 22px;
+      font-size: 18px;
       font-weight: bold;
       margin-top: 5px;
+      text-shadow: 1px 1px 2px #000;
     }
 
     .frame-area {
       position: relative;
-      width: 90%;
-      max-width: 400px;
+      width: 53%;
       aspect-ratio: 1 / 1;
-      margin: 15px auto;
+      margin: 10px auto;
       border-radius: 12px;
       overflow: hidden;
       border: 4px solid #b71c1c;
@@ -62,145 +65,75 @@
 
     .name-display {
       font-weight: bold;
-      font-size: 20px;
-      margin-top: 5px;
-      color: #b71c1c;
+      font-size: 18px;
+      color: #8b0000;
+      margin: 5px 0;
     }
 
-   body {
-  font-family: "Noto Sans Gujarati", sans-serif;
-  background: linear-gradient(180deg, #600000, #b71c1c);
-  color: #fff;
-  text-align: center;
-  margin: 0;
-  padding: 20px;
-}
+    .details {
+      background: linear-gradient(90deg, #8b0000, #a31515);
+      color: #fff8e1;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 8px 10px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
 
-.main-card {
-  background: linear-gradient(180deg, #fff8e1, #ffecb3); /* soft golden tone */
-  color: #2c2c2c;
-  border-radius: 20px;
-  max-width: 600px;
-  margin: auto;
-  padding: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  border: 4px solid #b71c1c;
-}
+    .gallery {
+      display: flex;
+      justify-content: space-between;
+      gap: 5px;
+      margin-top: 8px;
+      padding: 0 8px 8px 8px;
+    }
 
-.header {
-  background: linear-gradient(90deg, #7b0000, #c62828);
-  color: #fff;
-  padding: 14px;
-  border-radius: 15px 15px 0 0;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 1.6;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-}
+    .gallery-item {
+      width: 23%;
+      background: #fff8e1;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid #b71c1c;
+    }
 
-.sub-header {
-  color: #ffeb3b;
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 5px;
-  text-shadow: 1px 1px 2px #000;
-}
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+    }
 
-.frame-area {
-  position: relative;
-  width: 85%;
-  max-width: 350px;
-  aspect-ratio: 1 / 1;
-  margin: 15px auto;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 5px solid #b71c1c;
-  box-shadow: 0 2px 10px rgba(183, 28, 28, 0.5);
-}
+    .gallery-item p {
+      font-size: 10px;
+      font-weight: bold;
+      color: #8b0000;
+      margin: 4px 0;
+    }
 
-#preview {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    input, button {
+      margin-top: 10px;
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      font-size: 14px;
+    }
 
-.name-display {
-  font-weight: bold;
-  font-size: 22px;
-  margin-top: 8px;
-  color: #8b0000;
-  text-shadow: 0 1px 2px rgba(255,255,255,0.5);
-}
+    button {
+      background-color: #b71c1c;
+      color: white;
+      cursor: pointer;
+    }
 
-.details {
-  background: linear-gradient(90deg, #8b0000, #a31515);
-  color: #fff8e1;
-  border-radius: 10px;
-  padding: 12px;
-  margin: 12px 0;
-  line-height: 1.7;
-  font-size: 16px;
-  box-shadow: inset 0 0 10px rgba(255,255,255,0.2);
-}
-
-.gallery {
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-  margin-top: 15px;
-  padding: 0 8px 12px 8px;
-}
-
-.gallery-item {
-  width: 23%;
-  background: #fff8e1;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.25);
-  border: 2px solid #b71c1c;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.gallery-item p {
-  font-size: 12px;
-  font-weight: bold;
-  color: #8b0000;
-  margin: 5px 0;
-}
-
-input, button {
-  margin-top: 10px;
-  padding: 8px;
-  border-radius: 6px;
-  border: none;
-  font-size: 14px;
-}
-
-button {
-  background-color: #b71c1c;
-  color: white;
-  cursor: pointer;
-}
-
-.no-capture {
-  display: block;
-}
-
+    .no-capture {
+      display: block;
+    }
   </style>
 </head>
 <body>
 
-  <div id="captureArea" class="main-card">
+  <div id="captureArea" class="story-wrapper">
     <div class="header">
-      શ્રી ગુર્જર ક્ષત્રિય કડિયા સમાજ ટ્રસ્ટ સંચાલિત<br>
-      શ્રી વિશ્વકર્મા કેલવાણી ધામ (હાલાર)
-      <div class="sub-header">લીલ ડાયરો - સાંસ્કૃતિક કાર્યક્રમ</div>
+      શ્રી ગુર્જર ક્ષત્રિય કડિયા સમાજ ટ્રસ્ટ સંચાલિત.<br>
+      શ્રી વિશ્વકર્મા કેળવણી ધામ (હાલાર)
+      <div class="sub-header">લોક ડાયરો - સાંસ્કૃતિક કાર્યક્રમ</div>
     </div>
 
     <div class="frame-area">
@@ -213,35 +146,34 @@ button {
       હું અને મારો પરિવાર જઈએ છીએ...? <br>
       તો તમે પણ પરિવાર સાથે આવી રહ્યા છો ને?<br><br>
       <b>Date:</b> 27th OCTOBER 2025<br>
-      <b>Venue:</b> મ.પી.-માખાપર, તારાપુર ટોલ નાકા પાસે, તારાપુર-દુઘડ હાઈવે NH 151A<br>
+      <b>Venue:</b> મુ.પો.-માધાપર, તારાણા ટોલ નાકા પાસે,તારાણા-દુધઇ હાઇવે NH 151A<br>
       <b>Time:</b> 5:00 PM to 01:00 Midnight
     </div>
 
     <div class="gallery">
       <div class="gallery-item">
-        <img src="img/img mayabhai ahir 1.jfif" alt="માયાલાલ આહીર">
-        <p>માયાલાલ આહીર</p>
+        <img src="img/mayabhai.jfif" alt="માયાલાલ આહીર">
+        <p>માયાભાઇ આહીર</p>
       </div>
       <div class="gallery-item">
-        <img src="img/img 3 Kirtidan Gadhvi.jpg" alt="નિરલકાંત ગઢવી">
-        <p>નિરલકાંત ગઢવી</p>
+        <img src="img/Kirtidan_Gadhvi.jpg" alt="નિરલકાંત ગઢવી">
+        <p>કિર્તીદાન ગઢવી</p>
       </div>
       <div class="gallery-item">
-        <img src="img/img 2 Farida Meer.jpg" alt="ફાલ્ગુની મીરા">
-        <p>ફાલ્ગુની મીરા</p>
+        <img src="IMG/Farida_Meer.jpg" alt="ફાલ્ગુની મીરા">
+        <p>ફરીદાબેન મીર</p>
       </div>
       <div class="gallery-item">
-        <img src="IMG/img 4 Vishal Varu.jpg" alt="વિશાલ ભાલાણી">
-        <p>વિશાલ ભાલાણી</p>
+        <img src="IMG/Vishal_Varu.jpg" alt="વિશાલભાઈ વરુ">
+        <p>વિશાલભાઈ વરુ</p>
       </div>
     </div>
   </div>
 
-  <!-- Upload + Download Controls -->
   <div class="no-capture">
     <input type="text" id="userName" placeholder="તમારું નામ લખો" />
     <input type="file" id="imageUpload" accept="image/*" />
-    <button id="downloadBtn">Download Invitation</button>
+    <button id="downloadBtn">Download Story (1080x1920)</button>
   </div>
 
   <script>
@@ -250,32 +182,52 @@ button {
     const userNameInput = document.getElementById("userName");
     const nameDisplay = document.getElementById("nameDisplay");
 
-    imageUpload.addEventListener("change", function (event) {
+    // handle image upload
+    imageUpload.addEventListener("change", (event) => {
       const file = event.target.files[0];
       if (file) {
         const reader = new FileReader();
-        reader.onload = function (e) {
-          preview.src = e.target.result;
-        };
+        reader.onload = (e) => preview.src = e.target.result;
         reader.readAsDataURL(file);
       }
     });
 
-    userNameInput.addEventListener("input", function () {
+    // handle name typing
+    userNameInput.addEventListener("input", () => {
       nameDisplay.textContent = userNameInput.value || "તમારું નામ";
     });
 
+    // download fixed 1080x1920 image
     document.getElementById("downloadBtn").addEventListener("click", function () {
-      const hiddenElements = document.querySelectorAll(".no-capture");
-      hiddenElements.forEach(el => el.style.display = "none");
+      const hidden = document.querySelectorAll(".no-capture");
+      hidden.forEach(el => el.style.display = "none");
 
-      html2canvas(document.getElementById("captureArea"), { scale: 2 }).then(canvas => {
+      const captureArea = document.getElementById("captureArea");
+      const outputWidth = 1080;
+      const outputHeight = 1920;
+
+      html2canvas(captureArea, {
+        backgroundColor: null,
+        scale: 3,
+        useCORS: true,
+        scrollX: 0,
+        scrollY: 0
+      }).then(canvas => {
+        // Create a new fixed-size canvas
+        const finalCanvas = document.createElement("canvas");
+        finalCanvas.width = outputWidth;
+        finalCanvas.height = outputHeight;
+        const ctx = finalCanvas.getContext("2d");
+
+        // Scale the original canvas to exactly fill 1080x1920
+        ctx.drawImage(canvas, 0, 0, outputWidth, outputHeight);
+
         const link = document.createElement("a");
-        link.download = (userNameInput.value || "Invitation") + ".jpg";
-        link.href = canvas.toDataURL("image/jpeg");
+        link.download = (userNameInput.value || "Invitation") + "_Story.jpg";
+        link.href = finalCanvas.toDataURL("image/jpeg", 1.0);
         link.click();
       }).finally(() => {
-        hiddenElements.forEach(el => el.style.display = "");
+        hidden.forEach(el => el.style.display = "");
       });
     });
   </script>
